@@ -15,20 +15,20 @@ class Squares extends Component {
         const { color } = this.props;
         return (
             <div className="container d-flex">
-            <div className="container">
-                <Square 
-                    color={ color } 
-                    selected={ selected === 1 }
-                    handleClick={ ()=>this.setState({ selected: 1 }) }
-                />
-            </div>
-            <div className="container">
-                <Square 
-                    color={ color } 
-                    selected={ selected === 2 }
-                    handleClick={ ()=>this.setState({ selected: 2 }) }
-                />
-            </div>
+                <div className="container">
+                    <Square 
+                        color={ color } 
+                        selected={ selected === 1 }
+                        handleClick={ ()=>this.setState({ selected: 1 }) }
+                    />
+                </div>
+                <div className="container">
+                    <Square 
+                        color={ color } 
+                        selected={ selected === 2 }
+                        handleClick={ ()=>this.setState({ selected: 2 }) }
+                    />
+                </div>
             </div>
         )
     }

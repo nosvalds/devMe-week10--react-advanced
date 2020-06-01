@@ -13,10 +13,11 @@ class Button extends Component {
 
     handleClick() {
         const { handleUpdate } = this.props; // destructure to bring handleUpdate property function into handleClick
-        handleUpdate(this.state.clicks); // call and pass click as a argument
+        let updatedClicks = this.state.clicks + 1;
+        handleUpdate(updatedClicks); // call and pass click as a argument
 
         this.setState({
-            clicks: this.state.clicks + 1 // increment clicks and set state
+            clicks: updatedClicks, // increment clicks and set state
         })
     }
 

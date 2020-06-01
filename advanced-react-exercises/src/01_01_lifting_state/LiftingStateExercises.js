@@ -20,7 +20,7 @@ const LiftingStateExercises = () => (
         {/* 03 - Max */}
         <div className="container mb-4">
             <h2>03 Max</h2>
-            <Max count={ [1, 4, 5] }/>
+            <Max counts={ [1, 4, 5] }/>
         </div>
     </div>
 
