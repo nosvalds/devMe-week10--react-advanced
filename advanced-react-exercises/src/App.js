@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Footer from './components/Footer';
+import LiftingStateExercises from './01_01_lifting_state/LiftingStateExercises';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mx-auto" style={{width: 800}}>
+      <h1 className="mb-4 jumbotron">Advanced React Exercises</h1>
+      <Router>
+        <Route path="/01-01-lifting-state" component={ LiftingStateExercises } />
+        <Footer />
+      </Router>
     </div>
   );
 }
