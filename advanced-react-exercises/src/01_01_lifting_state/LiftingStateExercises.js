@@ -4,7 +4,7 @@ import Squares from './01_Squares/Squares'
 const LiftingStateExercises = () => (
     <div className="mx-auto" style={{width: 400}}>
         {/* 01 - Squares */}
-        <Squares color={ "hotpink" }/>
+        <Squares color="hotpink"/>
 
         {/* 02 - Password */}
 
