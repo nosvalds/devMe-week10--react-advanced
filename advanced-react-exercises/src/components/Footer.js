@@ -6,7 +6,9 @@ const Footer = () => {
     <footer>
         <nav className="nav navbar-light bg-light justify-content-center">
 
-            <Link to="/01-01-lifting-state">Lifting State</Link>
+            <Link className="btn btn-secondary m-2" to="/01-01-lifting-state">Lifting State</Link>
+            <Link className="btn btn-secondary m-2" to="/01-02-passing-data-up">Passing Data Up</Link>
+            
         </nav>
     </footer>
     )
