@@ -4,8 +4,8 @@ import axios from './axios';
 axios.get("/articles").then(({ data }) => console.log(data.data));
 
 // Exercise 02
-// axious.post("/articles", {
-//     title: "Hello",
-//     content: "Blah Blah Blah",
-//     tags: ['fish', 'sticks'],
-// });
+axios.post("/articles", {
+    title: "Hello",
+    content: "Blah Blah Blah",
+    tags: ['fish', 'sticks'],
+}).then(({ data }) => console.log(data.data));
