@@ -32,3 +32,7 @@ axios.get("/articles/54/comments").then(({ data }) => console.log(data.data));
 
 // Exercise 08 - output a list of all the tags
 axios.get("/tags").then(({ data }) => console.log(data.data));
+
+// Tricksy
+// 01 - Fetch an article with an ID that does not exist and console.log() "Not Found" when it fails
+axios.get("/articles/58").then(({ data }) => console.log(data.data),() => console.log("Not Found"));
