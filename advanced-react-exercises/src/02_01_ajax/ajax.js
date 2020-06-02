@@ -19,7 +19,7 @@ axios.patch("/articles/54", {
 }).then(({ data }) => console.log(data.data["tags"]));
 
 // Exercise 05 - Delete an article and console.log "Deleted"
-axios.delete("articles/58").then(console.log("Deleted"));
+//axios.delete("articles/58").then(console.log("Deleted"));
 
 // Exercise 06 - Add a comment to an article and console.log() it's ID
 axios.post("/articles/54/comments", {
@@ -27,3 +27,5 @@ axios.post("/articles/54/comments", {
 	comment: "True Axios"
 }).then(({ data }) => console.log(data.data["id"]));
 
+// Exercise 07 - console.log() all comments from one article
+axios.get("/articles/54/comments").then(({ data }) => console.log(data.data));
