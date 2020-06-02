@@ -9,3 +9,6 @@ axios.post("/articles", {
     content: "Blah Blah Blah",
     tags: ['fish', 'sticks'],
 }).then(({ data }) => console.log(data.data));
+
+// Exercise 03
+axios.get("/articles/54").then(({ data }) => console.log(data.data));
