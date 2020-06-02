@@ -14,9 +14,9 @@ axios.post("/articles", {
 // axios.get("/articles/54").then(({ data }) => console.log(data.data));
 
 // Exercise 04
-// axios.patch("/articles/54", {
-//         tags: ["spoons", "science", "spoon truther"]
-// }).then(({ data }) => console.log(data.data["tags"]));
+axios.patch("/articles/54", {
+        tags: ["spoons", "science", "spoon truther", "more spoons"]
+}).then(({ data }) => console.log(data.data.tags));
 
 // Exercise 05 - Delete an article and console.log "Deleted"
 //axios.delete("articles/58").then(console.log("Deleted"));
@@ -46,7 +46,7 @@ axios.get("/tags").then(({ data }) => console.log(data.data));
 
 // Uber-Tricksy
 // 03 - Table of tag amounts
-axios.get("/tags").then(({ data }) => {
+//axios.get("/tags").then(({ data }) => {
     
-});
+//});
 
