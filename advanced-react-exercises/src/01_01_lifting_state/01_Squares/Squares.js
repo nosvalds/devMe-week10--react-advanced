@@ -4,12 +4,10 @@ import Square from './Square';
 class Squares extends Component {
     constructor(props) {
         super(props);
-
         // track which square has been selected and is showing the color passed by the prop
-        this.state = { selected: 1 };
-
-        //this.handleClick = this.handleClick.bind(this);
+        this.state = { selected: 1 }; 
     }
+
     render() {
         const { selected } = this.state;
         const { color } = this.props;
