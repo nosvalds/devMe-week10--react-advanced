@@ -12,3 +12,8 @@ axios.post("/articles", {
 
 // Exercise 03
 axios.get("/articles/54").then(({ data }) => console.log(data.data));
+
+// Exercise 04
+axios.patch("/articles/54", {
+        tags: ["spoons", "science", "spoon truther"]
+}).then(({ data }) => console.log(data.data["tags"]));
