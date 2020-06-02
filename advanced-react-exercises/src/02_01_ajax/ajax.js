@@ -17,3 +17,6 @@ axios.get("/articles/54").then(({ data }) => console.log(data.data));
 axios.patch("/articles/54", {
         tags: ["spoons", "science", "spoon truther"]
 }).then(({ data }) => console.log(data.data["tags"]));
+
+// Exercise 05 - Delete an article and console.log "Deleted"
+axios.delete("articles/56").then(console.log("Deleted"));
