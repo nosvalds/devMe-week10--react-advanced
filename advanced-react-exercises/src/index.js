@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import './02_01_ajax/ajax'
+//import './02_01_ajax/ajax'
 
 ReactDOM.render(
   <React.StrictMode>
