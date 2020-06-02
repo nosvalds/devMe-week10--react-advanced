@@ -29,3 +29,6 @@ axios.post("/articles/54/comments", {
 
 // Exercise 07 - console.log() all comments from one article
 axios.get("/articles/54/comments").then(({ data }) => console.log(data.data));
+
+// Exercise 08 - output a list of all the tags
+axios.get("/tags").then(({ data }) => console.log(data.data));
