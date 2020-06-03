@@ -13,7 +13,6 @@ class Article extends Component {
 
     componentDidMount() {
         const { id } = this.props;
-        console.log(id);
         // GET request for specific article, get ID from props
         axios.get(`/articles/${ id }`).then(({ data }) => {
             // set into state
@@ -26,11 +25,34 @@ class Article extends Component {
     }
 
     render() {
-        const { id } = this.props;
-        const { article } = this.state;
-        console.log(article);
-        return (
-            <p>{ id }</p>
+        const { article, loaded } = this.state;
+        return !loaded ? <p>Loading...</p> : (
+            <>
+                <div className="jumbotron mb-4">
+                    <h1>The News</h1>
+                </div>
+                <ul className="list-group mb-4">
+                    <li key= { article.id } className="list-group-item">
+                        <div className="d-flex w-100 justify-content-between">
+                            <div className="d-flex flex-column">
+                                <h2>{ article.title }</h2>
+                                <p>{ article.content }</p>
+                            </div>
+                            <div className="d-flex align-items-end">
+                                {/* Loop to display tags */}
+                                { article.tags.map((tag, index) => (
+                                    <p 
+                                        key={ index } 
+                                        className="btn btn-primary m-2"
+                                    >
+                                        { tag }
+                                    </p>
+                                ))}
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </>
         )
     }
 }
