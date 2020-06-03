@@ -13,9 +13,9 @@ function App() {
     <div className="mx-auto" style={{width: 800}}>
       <h1 className="mb-4 jumbotron">Advanced React Exercises</h1>
       <Router>
-        <Switch>
+        <Switch> {/* So we only try to load 1 component */}
           <Route exact path="/news" component={ Articles }/>
-          <Route path="/news/create" component={ CreateArticle }/>
+          <Route path="/news/create" component={ CreateArticle }/> {/* needs to be before /:id otherwise we'll treat "create" as an ID */}
           <Route exact path="/news/:id" render={ ({ match }) => (
                   <Article 
                       id={ +match.params.id }
