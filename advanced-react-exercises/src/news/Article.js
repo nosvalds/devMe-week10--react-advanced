@@ -31,27 +31,26 @@ class Article extends Component {
                 <div className="jumbotron mb-4">
                     <h1>The News</h1>
                 </div>
-                <ul className="list-group mb-4">
-                    <li key= { article.id } className="list-group-item">
-                        <div className="d-flex w-100 justify-content-between">
-                            <div className="d-flex flex-column">
-                                <h2>{ article.title }</h2>
-                                <p>{ article.content }</p>
-                            </div>
-                            <div className="d-flex align-items-end">
-                                {/* Loop to display tags */}
-                                { article.tags.map((tag, index) => (
-                                    <p 
-                                        key={ index } 
-                                        className="btn btn-primary m-2"
-                                    >
-                                        { tag }
-                                    </p>
-                                ))}
-                            </div>
+                <article className="mb-4">
+                    <header className="d-flex w-100 justify-content-between">
+                        <div className="d-flex flex-column">
+                            <h2>{ article.title }</h2>
+                            
                         </div>
-                    </li>
-                </ul>
+                        <div className="d-flex align-items-end">
+                            {/* Loop to display tags */}
+                            { article.tags.map((tag, index) => (
+                                <p 
+                                    key={ index } 
+                                    className="btn btn-primary btn-sm m-2"
+                                >
+                                    { tag }
+                                </p>
+                            ))}
+                        </div>
+                    </header>
+                    <p>{ article.content }</p>
+                </article>
             </>
         )
     }

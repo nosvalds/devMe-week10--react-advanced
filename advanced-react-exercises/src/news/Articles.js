@@ -33,24 +33,26 @@ class Articles extends Component {
                 </div>
                 <ul className="list-group">
                     { articles.map(article => (
-                    <li key= { article.id } className="list-group-item">
-                        <div className="d-flex w-100 justify-content-between">
-                            <div className="d-flex flex-column">
-                                <h3>{ article.title }</h3>
+                    <a href={ article.id }>
+                        <li key={ article.id } className="list-group-item">
+                            <div className="d-flex w-100 justify-content-between">
+                                <div className="d-flex flex-column">
+                                    <h3>{ article.title }</h3>
+                                </div>
+                                <div className="d-flex align-items-end">
+                                    {/* Loop to display tags */}
+                                    { article.tags.map((tag, index) => (
+                                        <p 
+                                            key={ index } 
+                                            className="btn btn-primary btn-sm m-2"
+                                        >
+                                            { tag }
+                                        </p>
+                                    ))}
+                                </div>
                             </div>
-                            <div className="d-flex align-items-end">
-                                {/* Loop to display tags */}
-                                { article.tags.map((tag, index) => (
-                                    <p 
-                                        key={ index } 
-                                        className="btn btn-primary m-2"
-                                    >
-                                        { tag }
-                                    </p>
-                                ))}
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    </a>
                     )) }
                 </ul>
             </>
