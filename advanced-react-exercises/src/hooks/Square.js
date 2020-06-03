@@ -7,7 +7,7 @@ const Square = ({ color }) => {
 
     return (
         <>
-            <h3>Click me to turn me { color }</h3>
+            <h5>Click me to turn me { !clicked ? color : "green" }</h5>
             <div 
                 onClick={ handleClick } 
                 style={{
