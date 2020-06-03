@@ -1,6 +1,7 @@
 import React from 'react';
 import Clicked from './Clicked';
 import Square from './Square';
+import ToggleText from './ToggleText';
 
 const HooksExercises = () => (
     <div className="mx-auto" style={{width: 400}}>
@@ -16,6 +17,12 @@ const HooksExercises = () => (
         <div className="container mb-4">
             <h3>02 Square</h3>
             <Square color="hotpink" />
+        </div>
+
+        {/* 03 - ToggleText */}
+        <div className="container mb-4">
+            <h3>03 ToggleText</h3>
+            <ToggleText initial="Hello" alternate="World" />
         </div>
     </div>
 
