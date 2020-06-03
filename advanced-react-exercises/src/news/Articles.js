@@ -32,9 +32,9 @@ class Articles extends Component {
                     <h1>The News</h1>
                 </div>
                 <ul className="list-group">
-                    { articles.map(article => (
-                    <a href={ article.id }>
-                        <li key={ article.id } className="list-group-item">
+                    { articles.map((article) => (
+                    <a key={ article.id } href={ article.id }>
+                        <li className="list-group-item">
                             <div className="d-flex w-100 justify-content-between">
                                 <div className="d-flex flex-column">
                                     <h3>{ article.title }</h3>
