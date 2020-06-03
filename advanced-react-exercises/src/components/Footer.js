@@ -8,6 +8,7 @@ const Footer = () => {
 
             <Link className="btn btn-secondary m-2" to="/01-01-lifting-state">Lifting State</Link>
             <Link className="btn btn-secondary m-2" to="/01-02-passing-data-up">Passing Data Up</Link>
+            <Link className="btn btn-secondary m-2" to="/03-01-basic-hooks">Basic Hooks</Link>
             <Link className="btn btn-secondary m-2" to="/news/">News</Link>
             
         </nav>

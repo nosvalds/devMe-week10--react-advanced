@@ -8,6 +8,7 @@ import Articles from './news/Articles';
 import Article from './news/Article';
 import CreateArticle from './news/CreateArticle';
 import EditArticle from './news/EditArticle';
+import HooksExercises from './hooks/HooksExercises';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           )}/>
           <Route path="/01-01-lifting-state" component={ LiftingStateExercises } />
           <Route path="/01-02-passing-data-up" component={ PassingDataUpExercises } />
+          <Route path="/03-01-basic-hooks" component={ HooksExercises } />
         </Switch>
         <Footer />
       </Router>

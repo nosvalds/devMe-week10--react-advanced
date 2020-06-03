@@ -4,19 +4,19 @@ import axios from './axios';
 // axios.get("/articles").then(({ data }) => console.log(data.data));
 
 // Exercise 02
-axios.post("/articles", {
-    title: "Hello",
-    content: "Blah Blah Blah",
-    tags: ['fish', 'sticks'],
-}).then(({ data }) => console.log(data.data.id));
+// axios.post("/articles", {
+//     title: "Hello",
+//     content: "Blah Blah Blah",
+//     tags: ['fish', 'sticks'],
+// }).then(({ data }) => console.log(data.data.id));
 
 // Exercise 03
 // axios.get("/articles/54").then(({ data }) => console.log(data.data));
 
 // Exercise 04
-axios.patch("/articles/54", {
-        tags: ["spoons", "science", "spoon truther", "more spoons"]
-}).then(({ data }) => console.log(data.data.tags));
+// axios.patch("/articles/54", {
+//         tags: ["spoons", "science", "spoon truther", "more spoons"]
+// }).then(({ data }) => console.log(data.data.tags));
 
 // Exercise 05 - Delete an article and console.log "Deleted"
 //axios.delete("articles/58").then(console.log("Deleted"));
@@ -31,7 +31,7 @@ axios.patch("/articles/54", {
 // axios.get("/articles/54/comments").then(({ data }) => console.log(data.data));
 
 // Exercise 08 - output a list of all the tags
-axios.get("/tags").then(({ data }) => console.log(data.data));
+// axios.get("/tags").then(({ data }) => console.log(data.data));
 
 // Tricksy
 // 01 - Fetch an article with an ID that does not exist and console.log() "Not Found" when it fails
