@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from '../02_01_ajax/axios';
 import FormField from '../01_02_pass_data_up/02_form/FormField';
 
-class CreateArticle extends Component {
+class EditArticle extends Component {
     constructor(props) {
         super(props);
 
@@ -15,12 +15,27 @@ class CreateArticle extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        const { id } = this.props;
+        // GET request for specific article, get ID from props
+        axios.get(`/articles/${ id }`).then(({ data }) => {
+            // set into state
+            this.setState({
+                title: data.data.title,
+                content: data.data.content,
+                tags: data.data.tags.join(", "), // join tags array to a comma-delimeted string since it's stored as an array
+            })
+        
+        });
+    }
+
     handleChange(e, name) {
-        let newValue = e.currentTarget.value
-        this.setState({ [name]: newValue }); // update state
+        this.setState({ [name]: e.currentTarget.value }); // update state
     }
 
     handleSubmit(e) {
+        const { id } = this.props;
+
         e.preventDefault(); // keep page from refreshing
         let currentState = {...this.state};
 
@@ -28,12 +43,8 @@ class CreateArticle extends Component {
         currentState.tags = currentState.tags.trim().split(",").map((tag) => tag.trim())        
 
         // Post to DB
-        axios.post("/articles", currentState).then(() => {
-            this.setState({ // clear form
-                title: "",
-                content: "",
-                tags: "",
-            })
+        axios.put(`/articles/${ id }`, currentState).then(({ data }) => {
+            console.log(data.data)
         })
     }
 
@@ -41,7 +52,7 @@ class CreateArticle extends Component {
         const { title, content, tags } = this.state;
         return (
             <>
-                <h1 className="jumbotron">Create The News</h1>
+                <h1 className="jumbotron">Edit The News</h1>
                 <form action="post" className="mb-4 border border-secondary rounded p-4">
                     <FormField
                         label="Title"
@@ -69,7 +80,7 @@ class CreateArticle extends Component {
                         className="btn btn-primary"
                         onClick={ this.handleSubmit }
                     >  
-                        Create
+                        Update
                     </button>
                 </form>
             </>
@@ -77,4 +88,4 @@ class CreateArticle extends Component {
     }
 }
 
-export default CreateArticle;
+export default EditArticle;

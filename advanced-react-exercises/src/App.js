@@ -7,6 +7,7 @@ import PassingDataUpExercises from './01_02_pass_data_up/PassingDataUpExercises'
 import Articles from './news/Articles';
 import Article from './news/Article';
 import CreateArticle from './news/CreateArticle';
+import EditArticle from './news/EditArticle';
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
           <Route path="/news/create" component={ CreateArticle }/> {/* needs to be before /:id otherwise we'll treat "create" as an ID */}
           <Route exact path="/news/:id" render={ ({ match }) => (
                   <Article 
+                      id={ +match.params.id }
+                  />
+          )}/>
+          <Route exact path="/news/:id/edit" render={ ({ match }) => (
+                  <EditArticle 
                       id={ +match.params.id }
                   />
           )}/>
