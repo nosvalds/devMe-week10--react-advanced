@@ -3,6 +3,7 @@ import Clicked from './Clicked';
 import Square from './Square';
 import ToggleText from './ToggleText';
 import Counter from './Counter';
+import StepCounter from './StepCounter';
 
 const HooksExercises = () => (
     <div className="mx-auto" style={{width: 400}}>
@@ -30,6 +31,12 @@ const HooksExercises = () => (
         <div className="container mb-4">
             <h3>04 Counter</h3>
             <Counter initial={ 50 } max={ 100 } />
+        </div>
+
+        {/* 05 - StepCounter */}
+        <div className="container mb-4">
+            <h3>05 StepCounter</h3>
+            <StepCounter max={ 100 } step={ 5 } />
         </div>
     </div>
 
