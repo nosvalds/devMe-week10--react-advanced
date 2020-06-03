@@ -25,22 +25,24 @@ class Comments extends Component {
 
     render() {
         const { comments, loaded } = this.state;
-
+        console.log(comments);
         return !loaded ? <p>Loading comments...</p> : (
             <div className="container">
                 <h4>Comments</h4>
-                <ul className="list-group">
-                    { comments.map(comment => ( // loop on array of comment objects 
-                        <li key={ comment.id } className="list-group-item"> {/* need to include key of comment id for React */}
-                            <div className="d-flex w-100 justify-content-between">
-                                <div className="d-flex flex-column">
-                                    <h6>{ comment.email }</h6> {/* content */}
-                                    <p>{ comment.comment }</p>
+                { comments.length === 0 ? <p>No comments yet...</p> : (
+                    <ul className="list-group">
+                        { comments.map(comment => ( // loop on array of comment objects 
+                            <li key={ comment.id } className="list-group-item"> {/* need to include key of comment id for React */}
+                                <div className="d-flex w-100 justify-content-between">
+                                    <div className="d-flex flex-column">
+                                        <h6>{ comment.email }</h6> {/* content */}
+                                        <p>{ comment.comment }</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    )) }
-                </ul>
+                            </li>
+                        )) }
+                    </ul>
+                )}
             </div>
         )
     }
