@@ -1,5 +1,6 @@
 import React from 'react';
 import Clicked from './Clicked';
+import StepCounter from '../reducers/StepCounter';
 
 
 const ReducerExercises = () => (
@@ -10,6 +11,12 @@ const ReducerExercises = () => (
         <div className="container mb-4">
             <h3>01 Clicked</h3>
             <Clicked />
+        </div>
+
+        {/* 02 - StepCounter */}
+        <div className="container mb-4">
+            <h3>02 Step Counter</h3>
+            <StepCounter step={ 5 } max={ 100 } />
         </div>
     </div>
     );
