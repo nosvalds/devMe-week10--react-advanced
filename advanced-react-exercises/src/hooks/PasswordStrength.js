@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// better performance by pulling this outside of Password strength because this function is only declared once, rather than each time PasswordStrength is called to re-render the component.
 let color = (password) => {
     let pwLength = password.length;
     
