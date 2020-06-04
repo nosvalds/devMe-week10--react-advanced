@@ -9,7 +9,7 @@ const PasswordStrength = () => {
 
     let pwLength = input.length;
     let color = "";
-
+    // length validation logic
     if (pwLength > 0 && pwLength < 9) {
         color = "red";
     } else if (pwLength >= 9 && pwLength < 16) {
@@ -19,9 +19,7 @@ const PasswordStrength = () => {
     }
 
     return (
-        <div
-            
-        >
+        <form className="mb-4 border border-secondary rounded p-4">
             <label htmlFor="password" className="form-group">Check your password strength:</label>
             <input 
                 style={{
@@ -34,7 +32,7 @@ const PasswordStrength = () => {
                 value={ input }
             >
             </input>
-        </div>
+        </form>
     );
 }
 
