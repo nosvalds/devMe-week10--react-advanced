@@ -6,6 +6,7 @@ import Counter from './Counter';
 import StepCounter from './StepCounter';
 import CatchMeIfYouCan from './CatchMeIfYouCan';
 import RollCall from './RollCall';
+import PasswordStrength from './PasswordStrength';
 
 const HooksExercises = () => (
     <div className="mx-auto" style={{width: 400}}>
@@ -51,6 +52,12 @@ const HooksExercises = () => (
         <div className="container mb-4">
             <h3>07 Roll Call</h3>
             <RollCall names={ ["Nik", "Carl", "Bob"] } />
+        </div>
+
+        {/* 08 - Password Strength */}
+        <div className="container mb-4">
+            <h3>08 Password Strength</h3>
+            <PasswordStrength />
         </div>
     </div>
 

@@ -9,7 +9,7 @@ const RollCall = ({ names }) => {
         <p
         onClick={ handleClick }
         >
-            { names[index] }
+            { names[index] } {/* return the name at the index location from the array */}
         </p>
     );
 }
