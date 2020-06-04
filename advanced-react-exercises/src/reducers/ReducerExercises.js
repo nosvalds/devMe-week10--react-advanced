@@ -1,6 +1,7 @@
 import React from 'react';
 import Clicked from './Clicked';
-import StepCounter from '../reducers/StepCounter';
+import StepCounter from './StepCounter';
+import TempConverter from './TempConverter';
 
 
 const ReducerExercises = () => (
@@ -17,6 +18,12 @@ const ReducerExercises = () => (
         <div className="container mb-4">
             <h3>02 Step Counter</h3>
             <StepCounter step={ 5 } max={ 100 } />
+        </div>
+
+        {/* 03 - TempConverter */}
+        <div className="container mb-4">
+            <h3>03 Temp Converter</h3>
+            <TempConverter />
         </div>
     </div>
     );
