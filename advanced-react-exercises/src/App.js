@@ -9,6 +9,7 @@ import Article from './news/Article';
 import CreateArticle from './news/CreateArticle';
 import EditArticle from './news/EditArticle';
 import HooksExercises from './hooks/HooksExercises';
+import ReducerExercises from './reducers/ReducerExercises';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/01-01-lifting-state" component={ LiftingStateExercises } />
           <Route path="/01-02-passing-data-up" component={ PassingDataUpExercises } />
           <Route path="/03-01-basic-hooks" component={ HooksExercises } />
+          <Route path="/03-02-reducer-hooks" component={ ReducerExercises } />
         </Switch>
         <Footer />
       </Router>
