@@ -10,6 +10,7 @@ class EditArticle extends Component {
             title: "",
             content: "",
             tags: "",
+            loaded: false,
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,11 +20,13 @@ class EditArticle extends Component {
         const { id } = this.props;
         // GET request for specific article, get ID from props
         axios.get(`/articles/${ id }`).then(({ data }) => {
+            let article = data.data;
             // set into state
             this.setState({
-                title: data.data.title,
-                content: data.data.content,
-                tags: data.data.tags.join(", "), // join tags array to a comma-delimeted string since it's stored as an array
+                title: article.title,
+                content: article.content,
+                tags: article.tags.join(", "), // join tags array to a comma-delimeted string since it's stored as an array
+                loaded: true,
             })
         
         });
@@ -34,26 +37,31 @@ class EditArticle extends Component {
     }
 
     handleSubmit(e) {
-        const { id } = this.props;
-
         e.preventDefault(); // keep page from refreshing
-        let currentState = {...this.state};
+        
+        const { id } = this.props; // destructure id from props
+        let data = {...this.state} // copy the state
+        delete data.loaded // remove the loaded key/value pair
 
         // tags is a comma-delimited list and we need to turn it into an array, do some trimming to ensure we just have the tags
-        currentState.tags = currentState.tags.trim().split(",").map((tag) => tag.trim())        
+        data.tags = data.tags.split(/\s*,\s*/);        
 
         // Post to DB
-        axios.put(`/articles/${ id }`, currentState).then(({ data }) => {
+        axios.put(`/articles/${ id }`, data).then(({ data }) => {
             console.log(data.data)
         })
     }
 
     render() {
-        const { title, content, tags } = this.state;
-        return (
+        const { title, content, tags, loaded } = this.state;
+        return !loaded ? <p>Loading...</p> : (
             <>
                 <h1 className="jumbotron">Edit The News</h1>
-                <form action="post" className="mb-4 border border-secondary rounded p-4">
+                <form 
+                    action="post" 
+                    className="mb-4 border border-secondary rounded p-4"
+                    onSubmit={ this.handleSubmit }
+                >
                     <FormField
                         label="Title"
                         name="title"
@@ -78,7 +86,6 @@ class EditArticle extends Component {
                     <button 
                         type="submit" 
                         className="btn btn-primary"
-                        onClick={ this.handleSubmit }
                     >  
                         Update
                     </button>

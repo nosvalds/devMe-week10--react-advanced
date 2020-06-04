@@ -8,7 +8,7 @@ class Article extends Component {
 
         this.state = {
             loaded: false,
-            article: [],
+            article: {}, // empty object, match type
         };
     }
 

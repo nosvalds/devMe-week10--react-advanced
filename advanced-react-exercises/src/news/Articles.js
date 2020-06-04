@@ -12,6 +12,7 @@ class Articles extends Component {
     }
 
     componentDidMount() {
+        // runs once after first render
         // GET request for articles
         axios.get("/articles").then(({ data }) => {
             // set into state

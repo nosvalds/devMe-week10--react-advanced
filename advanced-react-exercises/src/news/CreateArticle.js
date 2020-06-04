@@ -16,19 +16,19 @@ class CreateArticle extends Component {
     }
 
     handleChange(e, name) {
-        let newValue = e.currentTarget.value
-        this.setState({ [name]: newValue }); // update state
+        this.setState({ [name]: e.currentTarget.value }); // update state, using "computed property names"
     }
 
     handleSubmit(e) {
         e.preventDefault(); // keep page from refreshing
-        let currentState = {...this.state};
+        let data = {...this.state};
 
         // tags is a comma-delimited list and we need to turn it into an array, do some trimming to ensure we just have the tags
-        currentState.tags = currentState.tags.trim().split(",").map((tag) => tag.trim())        
+        // could do this with a RegEx instead
+        data.tags = data.tags.split(/\s*,\s*/);        
 
         // Post to DB
-        axios.post("/articles", currentState).then(() => {
+        axios.post("/articles", data).then(() => {
             this.setState({ // clear form
                 title: "",
                 content: "",
@@ -42,13 +42,18 @@ class CreateArticle extends Component {
         return (
             <>
                 <h1 className="jumbotron">Create The News</h1>
-                <form action="post" className="mb-4 border border-secondary rounded p-4">
+                <form 
+                    className="mb-4 border border-secondary rounded p-4"
+                    onSubmit={ this.handleSubmit } // do it this way rather than onClick on the button
+                    // JS is doing this function call, you do need to bind it
+                >
                     <FormField
                         label="Title"
                         name="title"
                         type="text"
                         value={ title }
-                        onChange={ (e) => this.handleChange(e,"title") }
+                        onChange={ (e) => this.handleChange(e,"title") } // slight performance hit doing it this way, could use 1 function for each
+                        // since we're making the function call here in an anonymous function, binding is not neccessary
                     />
                     <FormField
                         label="Article Content"
@@ -67,7 +72,6 @@ class CreateArticle extends Component {
                     <button 
                         type="submit" 
                         className="btn btn-primary"
-                        onClick={ this.handleSubmit }
                     >  
                         Create
                     </button>
