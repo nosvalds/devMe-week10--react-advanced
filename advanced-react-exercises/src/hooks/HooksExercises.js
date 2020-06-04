@@ -5,6 +5,7 @@ import ToggleText from './ToggleText';
 import Counter from './Counter';
 import StepCounter from './StepCounter';
 import CatchMeIfYouCan from './CatchMeIfYouCan';
+import RollCall from './RollCall';
 
 const HooksExercises = () => (
     <div className="mx-auto" style={{width: 400}}>
@@ -44,6 +45,12 @@ const HooksExercises = () => (
         <div className="container mb-4">
             <h3>06 Catch Me If You Can</h3>
             <CatchMeIfYouCan jump={ 100 } />
+        </div>
+
+        {/* 07 - Roll Call */}
+        <div className="container mb-4">
+            <h3>07 Roll Call</h3>
+            <RollCall names={ ["Nik", "Carl", "Bob"] } />
         </div>
     </div>
 
