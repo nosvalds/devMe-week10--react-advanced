@@ -7,6 +7,7 @@ import StepCounter from './StepCounter';
 import CatchMeIfYouCan from './CatchMeIfYouCan';
 import RollCall from './RollCall';
 import PasswordStrength from './PasswordStrength';
+import TempConverter from './TempConverter';
 
 const HooksExercises = () => (
     <div className="mx-auto" style={{width: 400}}>
@@ -58,6 +59,12 @@ const HooksExercises = () => (
         <div className="container mb-4">
             <h3>08 Password Strength</h3>
             <PasswordStrength />
+        </div>
+
+        {/* 09 - Temp Converter */}
+        <div className="container mb-4">
+            <h3>09 Temp Converter</h3>
+            <TempConverter />
         </div>
     </div>
 
