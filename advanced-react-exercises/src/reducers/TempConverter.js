@@ -38,7 +38,10 @@ const TempConverter = () => {
                 <input 
                     type="number" 
                     name="celcius"
-                    onChange={ (e) => dispatch({ type: "CHANGE_C", value: e.currentTarget.value }) }
+                    onChange={ (e) => dispatch({ 
+                        type: "CHANGE_C", 
+                        value: e.currentTarget.value 
+                    }) }
                     value={ tempC }
                 >
                 </input>
@@ -48,7 +51,10 @@ const TempConverter = () => {
                 <input 
                     type="number"
                     name="farenheit"
-                    onChange={ (e) => dispatch({ type: "CHANGE_F", value: e.currentTarget.value }) } 
+                    onChange={ (e) => dispatch({ 
+                        type: "CHANGE_F", 
+                        value: e.currentTarget.value 
+                    }) } 
                     value={ tempF }
                 >
                 </input>

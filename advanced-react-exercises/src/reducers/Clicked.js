@@ -17,13 +17,13 @@ const reducer = (state, action) => {
 }
 
 const Clicked = () => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [{ clicked }, dispatch] = useReducer(reducer, initialState);
      
     return ( 
         <p
             onClick={ () => dispatch({ type: "CLICKED" }) } // onClick dispatch a CLICKED action
         >
-            {state.clicked ? "Clicked!" : "Not Clicked"} {/* Use ternary to flip between Clicked/Not Clicked based on value of clicked in state */}
+            {clicked ? "Clicked!" : "Not Clicked"} {/* Use ternary to flip between Clicked/Not Clicked based on value of clicked in state */}
         </p>
     );
 }
